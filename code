@@ -1,0 +1,35 @@
+import openai
+
+def setup_openai_api():
+    # Replace 'your-api-key' with your actual OpenAI API key
+    openai.api_key = 'your-api-key'
+
+def get_cv_text():
+    print("Please enter the text from your CV (paste and press Enter):")
+    cv_text = input()
+    return cv_text
+
+def generate_cover_letter(cv_text):
+    try:
+        response = openai.Completion.create(
+            engine="text-davinci-003",
+            prompt=f"Create a professional cover letter based on this CV:\n{cv_text}",
+            max_tokens=300  # You can adjust the max_tokens as needed
+        )
+        return response.choices[0].text.strip()
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
+
+def main():
+    setup_openai_api()
+    cv_text = get_cv_text()
+    cover_letter = generate_cover_letter(cv_text)
+    if cover_letter:
+        print("\nGenerated Cover Letter:")
+        print(cover_letter)
+    else:
+        print("Failed to generate a cover letter.")
+
+if __name__ == "__main__":
+    main()
