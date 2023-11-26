@@ -27,3 +27,25 @@ Testing and Debugging:
 
 Write test cases for your functions, especially for data parsing and API interactions.
 Topics: Unit testing (if covered).
+
+Project Structure:
+
+main.py: The main script to run the application.
+cv_processor.py: Module for handling CV text extraction.
+cover_letter_generator.py: Module for interacting with the OpenAI API to generate the cover letter.
+utils.py: (Optional) Utility functions, if needed.
+requirements.txt: Lists all the necessary Python packages.
+CV Text Extraction (cv_processor.py):
+
+Function to prompt the user to input their CV text.
+(Optional) If you plan to automate CV extraction from files, you can include functions for handling PDF or Word documents here.
+Cover Letter Generation (cover_letter_generator.py):
+
+Function to generate a cover letter using the OpenAI API.
+Main Application Logic (main.py):
+
+Integration of CV processing and cover letter generation.
+User interaction and workflow management.
+Dependencies (requirements.txt):
+
+List of all required Python packages like openai, and others if you're handling PDF or Word documents.
